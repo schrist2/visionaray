@@ -1263,6 +1263,12 @@ int main(int argc, char** argv)
     // Load the scene
     std::cout << "Loading model...\n";
 
+	if (rend.filenames.empty())
+	{
+		std::cerr << "No model\n";
+		return EXIT_FAILURE;
+	}
+
     for (auto filename : rend.filenames)
     {
         if (!rend.mod.load(filename))
